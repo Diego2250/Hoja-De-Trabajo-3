@@ -1,8 +1,9 @@
 import java.util.Scanner;
 import java.util.Random; 
 public class Main {
-   public static void main(String[] args) {
+public static void main(String[] args) {
     Scanner scan=new Scanner(System.in);
+    Sort mySort = new Sort(new Compare()); 
     archivo arch=new archivo(); 
     Random r1 = new Random();
     int datos; 
@@ -16,7 +17,6 @@ public class Main {
         System.out.println(listanumeros[i]);
         datoString=String.valueOf(listanumeros[i]);
         arch.escribir(datoString);
-    }  
-    
+    }      
    } 
 }
