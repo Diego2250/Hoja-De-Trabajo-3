@@ -3,8 +3,7 @@ import java.util.Random;
 public class Main {
 public static void main(String[] args) {
     Scanner scan=new Scanner(System.in);
-    bubble bubbleSrt=new bubble(); 
-    quick quickSrt=new quick(); 
+    sort mysSort=new sort(new comparate());
     archivo arch=new archivo(); 
     Random r1 = new Random();
     int datos=0, opcion=0; 
@@ -37,7 +36,7 @@ public static void main(String[] args) {
     }
     switch (opcion) {
         case 1:
-            bubbleSrt.bubbleSort(listanumeros);    
+           mysSort.BubbleSort(listanumeros);    
             for (int i = 0; i < listanumeros.length; i++) {
                 System.out.println(listanumeros[i]);
             }
@@ -49,7 +48,7 @@ public static void main(String[] args) {
             
             break;
         case 4:
-            quickSrt.quicksort(listanumeros, 0, listanumeros.length-1);
+            mysSort.quickSort(listanumeros, 0, listanumeros.length-1);
             for (int i = 0; i < listanumeros.length; i++) {
                 System.out.println(listanumeros[i]);
             }
