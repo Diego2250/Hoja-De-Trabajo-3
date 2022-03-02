@@ -18,6 +18,10 @@ public class archivo {
       e.printStackTrace();}
     }
 
+  
+  /** 
+   * @param dato
+   */
   public void escribir(String dato){
         try {
         FileWriter myWriter = new FileWriter("numeros.txt", true);
