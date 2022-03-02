@@ -7,6 +7,7 @@ public static void main(String[] args) {
     archivo arch=new archivo(); 
     Random r1 = new Random();
     int datos=0, opcion=0; 
+    boolean salir=false; 
     String datoString; 
     arch.crearchivo();
     System.out.println("Ingrese el número de datos que desea utilizar");
@@ -22,43 +23,51 @@ public static void main(String[] args) {
         datoString=String.valueOf(listanumeros[i]);
         arch.escribir(datoString);
     }     
-    System.out.println("\nIngrese la opción que desea utilizar: \n"+
+    String menu="\nIngrese la opción que desea utilizar: \n"+
     "1. Bubble Sort\n"+
     "2. Gnome Sort Sort\n"+
     "3. Merge sort\n"+
     "4. Quick sort\n"+
-    "5. Radix sort\n");
-    try {
-        opcion=scan.nextInt();
-        scan.nextLine(); 
-    } catch (Exception e) {
-        System.out.println("Opción invalida"); 
-    }
-    switch (opcion) {
-        case 1:
-           mysSort.BubbleSort(listanumeros);    
-            for (int i = 0; i < listanumeros.length; i++) {
-                System.out.println(listanumeros[i]);
-            }
-            break;
-        case 2:
-            
-            break;
-        case 3:
-            
-            break;
-        case 4:
-            mysSort.quickSort(listanumeros, 0, listanumeros.length-1);
-            for (int i = 0; i < listanumeros.length; i++) {
-                System.out.println(listanumeros[i]);
-            }
-            break;
-        case 5:
-        
-            break;
-        default:
+    "5. Radix sort\n"+
+    "6. Salir\n";
+    while(salir==false){
+        System.out.println(menu);
+        try {
+            opcion=scan.nextInt();
+            scan.nextLine(); 
+        } catch (Exception e) {
             System.out.println("Opción invalida"); 
-            break;
+        }
+        switch (opcion) {
+            case 1:
+               mysSort.BubbleSort(listanumeros);    
+                for (int i = 0; i < listanumeros.length; i++) {
+                    System.out.println(listanumeros[i]);
+                }
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                mysSort.quickSort(listanumeros, 0, listanumeros.length-1);
+                for (int i = 0; i < listanumeros.length; i++) {
+                    System.out.println(listanumeros[i]);
+                }
+                break;
+            case 5:
+            
+                break;
+            case 6:
+                 System.out.println("Adios");
+                 salir=true;   
+                break;    
+            default:
+                System.out.println("Opción invalida"); 
+                break;
+        }
     }
    } 
 }
