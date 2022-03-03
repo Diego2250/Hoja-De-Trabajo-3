@@ -51,6 +51,10 @@ public class Main {
                     break;
                 case 3:
 
+                    mysSort.mergeSort(listanumeros);
+                    // imprime dentro del método, ya que no es necesario imprimir desde el
+                    // controlador.
+
                     break;
                 case 4:
                     mysSort.quickSort(listanumeros, 0, listanumeros.length - 1);
