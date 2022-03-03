@@ -124,6 +124,11 @@ public class sort<T> {
 
         merge(arreglo, lhalf, rhalf);
 
+        System.out.println("El arreglo ordenado con merge es: ");
+        for (int m = 0; m < arreglo.length; m++) {
+            System.out.println(arreglo[m]);
+        }
+
     }
 
     /**
@@ -164,16 +169,11 @@ public class sort<T> {
             j++;
         }
 
-        System.out.println("El arreglo ordenado con merge es: ");
-        for (int m = 0; m < arreglo.length - 1; m++) {
-            System.out.println(arreglo[m]);
-        }
-
     }
 
-    public void gnomeSort(int arr[], int n){
+    public void gnomeSort(int arr[], int n) {
         int index = 0;
- 
+
         while (index < n) {
             if (index == 0)
                 index++;
