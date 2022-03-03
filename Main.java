@@ -67,7 +67,7 @@ public class Main {
                     break;
                 case 5:
 
-                    mysSort.RadixSort(listanumeros);
+                    mysSort.radix(listanumeros);
                     // imprime dentro del método, ya que no es necesario imprimir desde el
                     // controlador.
 
