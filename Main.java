@@ -47,7 +47,10 @@ public class Main {
                     }
                     break;
                 case 2:
-
+                mysSort.gnomeSort(listanumeros, listanumeros.length);
+                for (int i = 0; i < listanumeros.length; i++) {
+                    System.out.println(listanumeros[i]);
+                }
                     break;
                 case 3:
 
