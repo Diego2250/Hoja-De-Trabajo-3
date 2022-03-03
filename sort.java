@@ -5,6 +5,10 @@ public class sort<T> {
         myCompare = _Compare;
     }
 
+    
+    /** 
+     * @param myArray
+     */
     public void BubbleSort(int[] myArray) {
         for (int i = 0; i < myArray.length - 1; i++) { // n
             for (int j = i + 1; j < myArray.length; j++) { // n
@@ -17,6 +21,12 @@ public class sort<T> {
         }
     }
 
+    
+    /** 
+     * @param myArray
+     * @param inf
+     * @param sup
+     */
     public void quickSort(int[] myArray, int inf, int sup) {
         int i = inf - 1;
         int j = sup;
