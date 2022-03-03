@@ -5,8 +5,7 @@ public class sort<T> {
         myCompare = _Compare;
     }
 
-    
-    /** 
+    /**
      * @param myArray
      */
     public void BubbleSort(int[] myArray) {
@@ -21,8 +20,7 @@ public class sort<T> {
         }
     }
 
-    
-    /** 
+    /**
      * @param myArray
      * @param inf
      * @param sup
@@ -87,12 +85,10 @@ public class sort<T> {
             arreglo = aux;
         }
 
-        String arregloToString = "";
+        System.out.println("El arreglo ordenado por radix es el siguiente: ");
         for (int m = 0; m < arreglo.length - 1; m++) {
-            arregloToString = arregloToString + arreglo[m];
+            System.out.println(arreglo[m]);
         }
-
-        System.out.println("the radix sorted array is the following" + arregloToString);
 
     }
 
