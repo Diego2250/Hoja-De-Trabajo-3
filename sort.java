@@ -52,7 +52,7 @@ public class sort<T> {
     }
 
     /**
-     * obtenido de :
+     * obtenido de:
      * https://www.youtube.com/watch?v=fbRia-tshfo&ab_channel=MasterHeHeGar
      * 
      * @param arreglo contiene los números que se ordenarán.
@@ -83,6 +83,85 @@ public class sort<T> {
         }
 
         System.out.println("the radix sorted array is the following" + arregloToString);
+
+    }
+
+    /**
+     * obtenido de:
+     * https://www.youtube.com/watch?v=bOk35XmHPKs&ab_channel=CodingwithJohn
+     * 
+     * @param arreglo arreglo de números que se ordenarán.
+     */
+    public void mergeSort(int[] arreglo) {
+        int length = arreglo.length;
+        if (length < 2) {
+            return;
+        }
+
+        int midIndex = length / 2;
+        int[] lhalf = new int[midIndex];
+        int[] rhalf = new int[length - midIndex]; // No usamos midIndex porque si el arreglo no tiene una cantidad par
+                                                  // de números, entonces petaría.
+
+        // Llenando el lado izquierdo.
+        for (int i = 0; i < midIndex; i++) {
+            lhalf[i] = arreglo[i];
+        }
+
+        // Llenando el lado derecho
+        for (int i = midIndex; i < length; i++) {
+            rhalf[i - midIndex] = arreglo[i];
+        }
+
+        mergeSort(lhalf);
+        mergeSort(rhalf);
+
+        merge(arreglo, lhalf, rhalf);
+
+    }
+
+    /**
+     * Para usarse por mergeSort().
+     * Obtenido de:
+     * https://www.youtube.com/watch?v=bOk35XmHPKs&ab_channel=CodingwithJohn
+     * 
+     * @param arreglo arreglo de números orginales.
+     * @param lhalf   arreglo generado por método mergeSort(). Mitad izquierda
+     * @param rhalf   arreglo generado por método mergeSort(). Mitad derecha
+     */
+    public void merge(int[] arreglo, int[] lhalf, int[] rhalf) {
+        int lhalfSIze = lhalf.length;
+        int rhalfSize = rhalf.length;
+
+        int i = 0, j = 0, k = 0;
+        while (i < lhalfSIze && j < rhalfSize) {
+            // Looping and adding the sorted elements. (más fácil decirlo en ingles jaja)
+            if (lhalf[i] <= rhalf[j]) {
+                arreglo[k] = lhalf[i];
+                i++;
+            } else {
+                arreglo[k] = rhalf[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < lhalfSIze) {
+            arreglo[k] = lhalf[i];
+            k++;
+            i++;
+        }
+
+        while (j < rhalfSize) {
+            arreglo[k] = rhalf[j];
+            k++;
+            j++;
+        }
+
+        System.out.println("El arreglo ordenado con merge es: ");
+        for (int m = 0; m < arreglo.length - 1; m++) {
+            System.out.println(arreglo[m]);
+        }
 
     }
 
