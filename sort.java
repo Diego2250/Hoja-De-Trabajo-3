@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+
 public class sort<T> {
     public IComparator myCompare;
 
@@ -65,64 +67,33 @@ public class sort<T> {
      * 
      * @param arreglo contiene los números que se ordenarán.
      */
-    
-    /*
-     public void RadixSort(int[] arreglo) {
+    public void radix(int[] arreglo) {
+
         int x, i, j;
+
         for (x = Integer.SIZE - 1; x >= 0; x--) {
-            int aux[] = new int[arreglo.length];
+            int auxiliar[] = new int[arreglo.length];
             j = 0;
             for (i = 0; i < arreglo.length; i++) {
-                boolean mv = arreglo[i] << x >= 0;
-                if (x == 0 ? !mv : mv) {
-                    aux[j] = aux[i];
+                boolean mover = arreglo[i] << x >= 0;
+                if (x == 0 ? !mover : mover) {
+                    auxiliar[j] = arreglo[i];
                     j++;
                 } else {
                     arreglo[i - j] = arreglo[i];
                 }
             }
-            for (i = j; i < aux.length; i++) {
-                aux[i] = arreglo[i - j];
+            for (i = j; i < auxiliar.length; i++) {
+                auxiliar[i] = arreglo[i - j];
             }
-            arreglo = aux;
+            arreglo = auxiliar;
         }
-
-        System.out.println("El arreglo ordenado por radix es el siguiente: ");
-        for (int m = 0; m < arreglo.length - 1; m++) {
-            System.out.println(arreglo[m]);
+        System.out.println("el arreglo con ordenamiento radix es : ");
+        int k;
+        for (k = 0; k < arreglo.length; k++) {
+            System.out.println(arreglo[k]);
         }
-
     }
-    */
-
-    public void radix (int[] arreglo){
-
-        int x, i, j;
-        
-            for (x= Integer.SIZE - 1; x >= 0; x--){
-                int auxiliar [] = new int[arreglo.length];
-                j=0;
-                for (i=0; i<arreglo.length; i++){
-                    boolean mover = arreglo[i] << x >=0;
-                    if(x==0 ? !mover:mover){
-                        auxiliar[j]=arreglo[i];
-                        j++;
-                    }else{
-                        arreglo[i-j]=arreglo[i];
-                    }
-                }
-                for(i=j;i<auxiliar.length;i++){
-                    auxiliar[i]=arreglo[i-j];
-                }
-                arreglo=auxiliar;
-            }
-            System.out.println("el arreglo con ordenamiento radix es : ");
-            int k;
-            for (k=0;k<arreglo.length;k++){
-                System.out.println(arreglo[k]);
-            }
-        }
-
 
     /**
      * obtenido de:
@@ -130,10 +101,10 @@ public class sort<T> {
      * 
      * @param arreglo arreglo de números que se ordenarán.
      */
-    public void mergeSort(int[] arreglo) {
+    public int[] mergeSort(int[] arreglo) {
         int length = arreglo.length;
         if (length < 2) {
-            return;
+            return null;
         }
 
         int midIndex = length / 2;
@@ -155,12 +126,7 @@ public class sort<T> {
         mergeSort(rhalf);
 
         merge(arreglo, lhalf, rhalf);
-
-        System.out.println("El arreglo ordenado con merge es: ");
-        for (int m = 0; m < arreglo.length; m++) {
-            System.out.println(arreglo[m]);
-        }
-
+        return arreglo;
     }
 
     /**

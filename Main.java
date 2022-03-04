@@ -47,16 +47,18 @@ public class Main {
                     }
                     break;
                 case 2:
-                mysSort.gnomeSort(listanumeros, listanumeros.length);
-                for (int i = 0; i < listanumeros.length; i++) {
-                    System.out.println(listanumeros[i]);
-                }
+                    mysSort.gnomeSort(listanumeros, listanumeros.length);
+                    for (int i = 0; i < listanumeros.length; i++) {
+                        System.out.println(listanumeros[i]);
+                    }
                     break;
                 case 3:
 
-                    mysSort.mergeSort(listanumeros);
-                    // imprime dentro del método, ya que no es necesario imprimir desde el
-                    // controlador.
+                    int[] temp = mysSort.mergeSort(listanumeros);
+                    System.out.println("El arreglo ordenado por mergesort es el siguiente: ");
+                    for (int i = 0; i < temp.length; i++) {
+                        System.out.println(temp[i]);
+                    }
 
                     break;
                 case 4:
