@@ -4,6 +4,10 @@
 #InteliJ files
 *.iml
 *.xml
+/Datos
+/lib
+/out
+/.idea
 
 # Log file
 *.log
