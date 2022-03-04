@@ -9,7 +9,7 @@ public class sort<T> {
      * @param myArray
      * @return
      */
-    public short BubbleSort(int[] myArray) {
+    public void BubbleSort(int[] myArray) {
         for (int i = 0; i < myArray.length - 1; i++) { // n
             for (int j = i + 1; j < myArray.length; j++) { // n
                 if (myCompare.Compare(myArray[i], myArray[j]) > 0) { // 1
@@ -19,7 +19,6 @@ public class sort<T> {
                 }
             }
         }
-        return 0;
     }
 
     /**
@@ -62,12 +61,10 @@ public class sort<T> {
     }
 
     /**
-     * obtenido de:
-     * https://www.youtube.com/watch?v=fbRia-tshfo&ab_channel=MasterHeHeGar
-     * 
+     * obtenido de: https://www.youtube.com/watch?v=fbRia-tshfo&ab_channel=MasterHeHeGar
      * @param arreglo contiene los números que se ordenarán.
      */
-    public void radix(int[] arreglo) {
+    public int[] radix(int[] arreglo) {
 
         int x, i, j;
 
@@ -88,11 +85,7 @@ public class sort<T> {
             }
             arreglo = auxiliar;
         }
-        System.out.println("el arreglo con ordenamiento radix es : ");
-        int k;
-        for (k = 0; k < arreglo.length; k++) {
-            System.out.println(arreglo[k]);
-        }
+        return arreglo;
     }
 
     /**

@@ -69,9 +69,12 @@ public class Main {
                     break;
                 case 5:
 
-                    mysSort.radix(listanumeros);
-                    // imprime dentro del método, ya que no es necesario imprimir desde el
-                    // controlador.
+                    int[] temp5 = mysSort.radix(listanumeros);
+                    System.out.println("el arreglo con ordenamiento radix es : ");
+                    int k;
+                    for (k = 0; k < temp5.length; k++) {
+                        System.out.println(temp5[k]);
+                    }
 
                     break;
                 case 6:
