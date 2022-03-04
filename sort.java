@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 public class sort<T> {
     public IComparator myCompare;
 
@@ -9,8 +7,9 @@ public class sort<T> {
 
     /**
      * @param myArray
+     * @return
      */
-    public void BubbleSort(int[] myArray) {
+    public short BubbleSort(int[] myArray) {
         for (int i = 0; i < myArray.length - 1; i++) { // n
             for (int j = i + 1; j < myArray.length; j++) { // n
                 if (myCompare.Compare(myArray[i], myArray[j]) > 0) { // 1
@@ -20,6 +19,7 @@ public class sort<T> {
                 }
             }
         }
+        return 0;
     }
 
     /**
