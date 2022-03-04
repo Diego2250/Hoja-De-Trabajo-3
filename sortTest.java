@@ -11,7 +11,7 @@ class sortTest {
         int [] disordered_array = {9,8,7,6,5,4,3,2,1,10,11,12,13,100,1000};
         int [] ordered_array = {1,2,3,4,5,6,7,8,9,10,11,12,13,100,1000};
         t.BubbleSort(disordered_array);
-        assertEquals(3, disordered_array[2]);
+        assertArrayEquals(ordered_array, disordered_array);
     }
 
     @Test
@@ -19,21 +19,27 @@ class sortTest {
         int [] disordered_array = {9,8,7,6,5,4,3,2,1,10,11,12,13,100,1000};
         int [] ordered_array = {1,2,3,4,5,6,7,8,9,10,11,12,13,100,1000};
         t.quickSort(disordered_array, 0, disordered_array.length-1);
-        assertEquals(10, disordered_array[9]);
+        assertArrayEquals(ordered_array, disordered_array);
+
+
     }
 
     @Test
     void radix() {
         int [] disordered_array = {9,8,7,6,5,4,3,2,1,10,11,12,13,100,1000};
         int [] ordered_array = {1,2,3,4,5,6,7,8,9,10,11,12,13,100,1000};
-        assertEquals(4, t.radix(disordered_array)[3]);
+        disordered_array = t.radix(disordered_array);
+        assertArrayEquals(ordered_array, disordered_array);
+
     }
 
     @Test
     void merge() { // En realidad evalua el método mergeSort, pero es merge.
         int [] disordered_array = {9,8,7,6,5,4,3,2,1,10,11,12,13,100,1000};
         int [] ordered_array = {1,2,3,4,5,6,7,8,9,10,11,12,13,100,1000};
-        assertEquals(5, t.mergeSort(disordered_array)[4]);
+        //assertEquals(5, t.mergeSort(disordered_array)[4]);
+        disordered_array = t.mergeSort(disordered_array);
+        assertArrayEquals(ordered_array, disordered_array);
     }
 
     @Test
@@ -41,6 +47,6 @@ class sortTest {
         int [] disordered_array = {9,8,7,6,5,4,3,2,1,10,11,12,13,100,1000};
         int [] ordered_array = {1,2,3,4,5,6,7,8,9,10,11,12,13,100,1000};
         t.gnomeSort(disordered_array, disordered_array.length);
-        assertEquals(8, disordered_array[7]);
+        assertArrayEquals(ordered_array, disordered_array);
     }
 }
