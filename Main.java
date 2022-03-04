@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -11,7 +12,7 @@ public class Main {
         boolean salir = false;
         String datoString;
         arch.crearchivo();
-        System.out.println("Ingrese el número de datos que desea utilizar");
+        System.out.println("Ingrese el ñumero de datos que desea utilizar");
         try {
             datos = scan.nextInt();
         } catch (Exception e) {
@@ -24,6 +25,19 @@ public class Main {
             datoString = String.valueOf(listanumeros[i]);
             arch.escribir(datoString);
         }
+
+        //PARTE DONDE MORA LA CAGO
+        int[] copiedArray = new int[datos];
+        System.arraycopy(listanumeros, 0, copiedArray, 0, datos);
+        Arrays.sort(copiedArray);
+
+        System.out.print("aqui aaaaaaaa \n");
+        for (int i = 0; i < copiedArray.length; i++) {
+            System.out.println(copiedArray[i]);
+        }
+        // AQUI TERMINA PARTE DONDE MORA LA CAGO.
+
+
         String menu = "\nIngrese la opción que desea utilizar: \n" +
                 "1. Bubble Sort\n" +
                 "2. Gnome Sort Sort\n" +
@@ -41,20 +55,20 @@ public class Main {
             }
             switch (opcion) {
                 case 1:
-                    mysSort.BubbleSort(listanumeros);
-                    for (int i = 0; i < listanumeros.length; i++) {
-                        System.out.println(listanumeros[i]);
+                    mysSort.BubbleSort(copiedArray);
+                    for (int i = 0; i < copiedArray.length; i++) {
+                        System.out.println(copiedArray[i]);
                     }
                     break;
                 case 2:
-                    mysSort.gnomeSort(listanumeros, listanumeros.length);
-                    for (int i = 0; i < listanumeros.length; i++) {
-                        System.out.println(listanumeros[i]);
+                    mysSort.gnomeSort(copiedArray, copiedArray.length);
+                    for (int i = 0; i < copiedArray.length; i++) {
+                        System.out.println(copiedArray[i]);
                     }
                     break;
                 case 3:
 
-                    int[] temp = mysSort.mergeSort(listanumeros);
+                    int[] temp = mysSort.mergeSort(copiedArray);
                     System.out.println("El arreglo ordenado por mergesort es el siguiente: ");
                     for (int i = 0; i < temp.length; i++) {
                         System.out.println(temp[i]);
@@ -62,14 +76,14 @@ public class Main {
 
                     break;
                 case 4:
-                    mysSort.quickSort(listanumeros, 0, listanumeros.length - 1);
-                    for (int i = 0; i < listanumeros.length; i++) {
-                        System.out.println(listanumeros[i]);
+                    mysSort.quickSort(copiedArray, 0, copiedArray.length - 1);
+                    for (int i = 0; i < copiedArray.length; i++) {
+                        System.out.println(copiedArray[i]);
                     }
                     break;
                 case 5:
 
-                    int[] temp5 = mysSort.radix(listanumeros);
+                    int[] temp5 = mysSort.radix(copiedArray);
                     System.out.println("el arreglo con ordenamiento radix es : ");
                     int k;
                     for (k = 0; k < temp5.length; k++) {
